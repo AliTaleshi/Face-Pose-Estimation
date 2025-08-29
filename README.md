@@ -1,13 +1,12 @@
-# Face Pose Estimation 🎯
+# Face-Pose-Estimation
 
-Head pose estimation using **MediaPipe FaceMesh** for landmark extraction and **Support Vector Regression (SVR)** for predicting head orientation (pitch, yaw, roll).  
-This project supports **dataset-based evaluation** and **real-time webcam inference**.
-
----
-
-## 📂 Project Structure
+Head pose estimation using **MediaPipe FaceMesh** and **Support Vector Regression (SVR)** — supports dataset-based evaluation and real-time webcam inference with **pitch**, **yaw**, and **roll** predictions.
 
 ---
+
+##  Project Structure
+
+```
 Face-Pose-Estimation/
 │
 ├── main.py # (Optional) Entrypoint for manual running
@@ -31,8 +30,8 @@ Face-Pose-Estimation/
 ├── image.jpg # Test image for model performance evaluation
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
-└── .gitignore
----
+└── .gitignore                     # This file
+```
 
 > **Note**: The `output/` directory (containing model files, result logs, plots) and the `dataset/AFLW2000/` directory are excluded from this repository for file size reasons.
 
@@ -44,12 +43,14 @@ Face-Pose-Estimation/
    ```bash
    git clone https://github.com/AliTaleshi/Face-Pose-Estimation.git
    cd Face-Pose-Estimation
+   ```
 
 2. **Install dependencies**  
    ```bash
    python -m venv venv
    source venv/bin/activate   # Windows: venv\Scripts\activate
    pip install -r requirements.txt
+   ```
 
 ---
 
@@ -65,24 +66,24 @@ This notebook covers:
 - Training SVR (and optionally other regressors)
 - Evaluating using regression metrics
 - Visualizing results and saving model artifacts
+- Inference on image and webcam
 
 ---
 
-### 2. Manual Inference on a New Image
-You can use `main.py` to predict pose angles for a specified image:
+### 2. Image Inference
+You can use `main.py` to manually run the project (Optional):
 ```bash
-python main.py --image path/to/your_image.jpg
+python main.py
 ```
 
 Example usage inside `main.py` (pseudocode):
 ```python
-from src.models import load_model
-from src.preprocessing import preprocess_image
+from src.preprocessing import inference_on_image
 
-model = load_model('output/SVR_model.sav')
-features = preprocess_image(image_path)
-pitch, yaw, roll = model.predict([features])[0]
-print('Predicted angles — Pitch: {:.2f}, Yaw: {:.2f}, Roll: {:.2f}'.format(pitch, yaw, roll))
+# =========================================
+# 6. Run Inference on New Image
+# =========================================
+inference_on_image()
 ```
 
 ---
@@ -90,7 +91,17 @@ print('Predicted angles — Pitch: {:.2f}, Yaw: {:.2f}, Roll: {:.2f}'.format(pit
 ### 3. Real-Time Webcam Inference
 For live head pose estimation with axis overlay:
 ```bash
-python src/webcam_inference.py
+python main.py
+```
+
+Example usage inside `main.py` (pseudocode):
+```python
+from src.webcam import start_webcam_pose_estimation()
+
+# =========================================
+# 7. Run Inference on Webcam
+# =========================================
+start_webcam_pose_estimation()
 ```
 
 **Controls**:
