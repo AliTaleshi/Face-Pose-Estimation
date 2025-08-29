@@ -54,6 +54,30 @@ Face-Pose-Estimation/
 
 ---
 
+## Getting Started (Kaggle/Colab Setup)
+
+If you are running this project on **Google Colab** or using **Kaggle datasets**, follow these steps to install dependencies and prepare the datasets:
+
+```bash
+# Install dependencies
+!pip install mediapipe
+
+# Setup Kaggle API credentials
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+# Download AFLW2000-3D dataset
+!kaggle datasets download mohamedadlyi/aflw2000-3d
+!unzip aflw2000-3d.zip
+
+# Download CelebA dataset (optional for face images)
+!kaggle datasets download jessicali9530/celeba-dataset
+!unzip celeba-dataset.zip
+```
+
+---
+
 ##  Usage Guide
 
 ### 1. Training & Evaluation (Jupyter Notebook)
@@ -154,12 +178,3 @@ pip install -r requirements.txt
 ##  Acknowledgements
 
 Developed as a **final-year college project** by **Ali Taleshi**.
-
----
-
-##  Future Enhancements
-
-- Incorporate deep learning models (e.g., CNN, ResNet) for regression  
-- Support multi-face tracking and multi-angle estimation in real time  
-- Deploy as an interactive web app using Flask or Streamlit  
-- Expand to video file input for batch inference  
