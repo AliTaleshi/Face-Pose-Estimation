@@ -7,6 +7,7 @@ This project supports **dataset-based evaluation** and **real-time webcam infere
 
 ## 📂 Project Structure
 
+---
 Face-Pose-Estimation/
 │
 ├── main.py # (Optional) Entrypoint for manual running
@@ -31,6 +32,7 @@ Face-Pose-Estimation/
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
 └── .gitignore
+---
 
 > **Note**: The `output/` directory (containing model files, result logs, plots) and the `dataset/AFLW2000/` directory are excluded from this repository for file size reasons.
 
