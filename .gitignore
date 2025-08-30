@@ -74,9 +74,6 @@ env.py
 *.ipr
 *.iws
 
-.ipynb_checkpoints/
-*.ipynb
-
 *.sublime-*
 *.sublime-project
 *.sublime-workspace
