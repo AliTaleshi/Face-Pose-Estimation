@@ -25,7 +25,7 @@ Face-Pose-Estimation/
 │ └── AFLW2000/ # Contains .jpg and .mat files (not included in repo)
 │
 ├── output/ # Model results & saved models (ignored in repo)
-│ └── *.sav / *.txt
+│ └── *.pkl / *.txt
 │
 ├── image.jpg # Test image for model performance evaluation
 ├── requirements.txt # Python dependencies
