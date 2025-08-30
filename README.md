@@ -30,7 +30,7 @@ Face-Pose-Estimation/
 ├── image.jpg # Test image for model performance evaluation
 ├── requirements.txt # Python dependencies
 ├── README.md # Project documentation
-└── .gitignore                     # This file
+└── .gitignore # All the ignored files and directories listed here
 ```
 
 > **Note**: The `output/` directory (containing model files, result logs, plots) and the `dataset/AFLW2000/` directory are excluded from this repository for file size reasons.
